@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     private float maxSpeed = 10;
     private Rigidbody2D rigid;
 
+    private Vector3 playerCamPos;
+    private Vector3 dir;
+
 	void Start () 
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -14,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update () 
     {
-	
+        PlayerLookAtMouse();
 	}
 
     void FixedUpdate()
@@ -26,24 +29,31 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            rigid.AddRelativeForce(new Vector2(-playerSpeed, 0));
+            rigid.AddForce(new Vector2(-playerSpeed, 0));
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rigid.AddRelativeForce(new Vector2(playerSpeed, 0));
+            rigid.AddForce(new Vector2(playerSpeed, 0));
         }
         if (Input.GetKey(KeyCode.W))
         {
-            rigid.AddRelativeForce(new Vector2(0, playerSpeed));
+            rigid.AddForce(new Vector2(0, playerSpeed));
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rigid.AddRelativeForce(new Vector2(0, -playerSpeed));
+            rigid.AddForce(new Vector2(0, -playerSpeed));
         }
 
         if (rigid.velocity.magnitude > maxSpeed)
         {
             rigid.velocity = rigid.velocity.normalized * maxSpeed;
         }
+    }
+
+    void PlayerLookAtMouse()
+    {
+        playerCamPos = Camera.main.WorldToScreenPoint(transform.position);
+        dir = Input.mousePosition - playerCamPos;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg));
     }
 }

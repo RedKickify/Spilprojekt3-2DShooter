@@ -6,11 +6,8 @@ public class PlayerRotation : MonoBehaviour
     private Vector3 playerCamPos;
     private Vector3 dir;
 
-    private Rigidbody2D rigid;
-
     void Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
     }
 
     void Update()
