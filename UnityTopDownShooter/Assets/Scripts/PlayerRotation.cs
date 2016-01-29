@@ -22,6 +22,6 @@ public class PlayerRotation : MonoBehaviour
     {
         playerCamPos = Camera.main.WorldToScreenPoint(transform.position);
         dir = Input.mousePosition - playerCamPos;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg));
     }
 }

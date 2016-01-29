@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SecondaryBullet : MonoBehaviour 
+public class Bullet : MonoBehaviour 
 {
     public float speed;
 
