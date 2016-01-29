@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SecWeapon : Photon.PunBehaviour 
+public class SecWeapon : MonoBehaviour 
 {
     public float Damage;
     public float BulletSpeed;
@@ -26,8 +26,7 @@ public class SecWeapon : Photon.PunBehaviour
         { 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                SecBullet = PhotonNetwork.Instantiate("SecBullet", BulletPointStart.position, transform.rotation, 0);
-                //Instantiate(SecBullet, BulletPointStart.position, transform.rotation);
+                Instantiate(SecBullet, BulletPointStart.position, transform.rotation);
             }
         }
     }
