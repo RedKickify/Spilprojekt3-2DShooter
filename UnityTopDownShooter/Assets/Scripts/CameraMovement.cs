@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour
 
 	void Start () 
     {
-        player = GameObject.Find("EmtyPlayer");
+        player = GameObject.Find("EmptyPlayer");
 	}
 
 	void Update () 
