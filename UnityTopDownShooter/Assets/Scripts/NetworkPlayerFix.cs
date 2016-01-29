@@ -11,9 +11,4 @@ public class NetworkPlayerFix : Photon.PunBehaviour
             GetComponent<SecWeapon>().enabled = true;
         }
 	}
-
-	void Update ()
-    {
-	
-	}
 }
