@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
 	}
 
     void FollowPlayer()
-    { 
-       
+    {
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
     }
 }

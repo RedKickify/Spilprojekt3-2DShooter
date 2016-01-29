@@ -12,6 +12,11 @@ public class Bullet : MonoBehaviour
 	
 	void Update () 
     {
-	    
+        MovementControl();
 	}
+
+    void MovementControl()
+    {
+        transform.Translate(Vector2.right * Time.deltaTime * speed);
+    }
 }
