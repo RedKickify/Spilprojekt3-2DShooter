@@ -3,11 +3,11 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour 
 {
-    private GameObject player;
+    public GameObject player;
 
 	void Start () 
     {
-        player = GameObject.Find("Player");
+
 	}
 
 	void Update () 

@@ -18,6 +18,7 @@ public class NetworkManager : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         GameObject player = PhotonNetwork.Instantiate("Player", new Vector3(0, 0), Quaternion.identity, 0);
+        Camera.main.GetComponent<CameraMovement>().player = player;
     }
 
     void OnGUI()
